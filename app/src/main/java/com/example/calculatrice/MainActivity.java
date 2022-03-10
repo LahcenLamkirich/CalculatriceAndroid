@@ -16,12 +16,22 @@ public class MainActivity extends AppCompatActivity {
     // la declaration des Text Views :
     TextView txtMain, txtSeconde;
 
+    public int fact(int a){
+        int res = a ;
+        for(int i = a ; i > 1 ; i--){
+            res = res * i ;
+        }
+        return a;
+    }
+
+
     @SuppressLint("WrongConstant")
     @RequiresApi(api = Build.VERSION_CODES.O)
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        System.out.println("Le factorielle est : " + fact(5));
         getSupportActionBar().hide(); // to remove the default app Bar
         // Association des Button :
         btnAc = findViewById(R.id.btnAc);
@@ -144,7 +154,7 @@ public class MainActivity extends AppCompatActivity {
 //            }
 //        });
 
-        // il faut commencer par le nombre apres on click cos 
+        // il faut commencer par le nombre apres on click cos
         btnCos.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -154,6 +164,47 @@ public class MainActivity extends AppCompatActivity {
                 txtSeconde.setText("Cos "+d);
             }
         });
+
+        // il faut commencer par le nombre apres on click Sin
+        btnSin.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                double d = Double.parseDouble(txtMain.getText().toString());
+                double res = Math.sin(d);
+                txtMain.setText(String.valueOf(res));
+                txtSeconde.setText("Sin "+d);
+            }
+        });
+
+        btnLn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                double d = Double.parseDouble(txtMain.getText().toString());
+                double res = Math.log(d);
+                txtMain.setText(String.valueOf(res));
+                txtSeconde.setText("Ln "+d);
+            }
+        });
+        btnLog.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                double d = Double.parseDouble(txtMain.getText().toString());
+                double res = Math.log10(d);
+                txtMain.setText(String.valueOf(res));
+                txtSeconde.setText("Log "+d);
+            }
+        });
+
+//        btnFact.setOnClickListener(new View.OnClickListener() {
+////            @Override
+////            public void onClick(View v) {
+////                double d = Double.parseDouble(txtMain.getText().toString());
+////                double res = Math.fact(d);
+////                txtMain.setText(String.valueOf(res));
+////                txtSeconde.setText("Fact "+d);
+////            }
+////        });
+
 
         btnPlus.setOnClickListener(new View.OnClickListener() {
             @Override
