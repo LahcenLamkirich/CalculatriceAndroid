@@ -17,11 +17,12 @@ public class MainActivity extends AppCompatActivity {
     TextView txtMain, txtSeconde;
 
     public int fact(int a){
-        int res = a ;
-        for(int i = a ; i > 1 ; i--){
-            res = res * i ;
+
+        int fact = 1 ;
+        for(int i = 1 ; i <= a ; i++){
+            fact = fact * i ;
         }
-        return a;
+        return fact ;
     }
 
 
