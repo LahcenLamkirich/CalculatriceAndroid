@@ -265,10 +265,31 @@ public class MainActivity extends AppCompatActivity {
         btnDivPar1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                double d = Double.parseDouble(txtMain.getText().toString());
+                double res = 1/d;
+                txtMain.setText(String.valueOf(res));
+                txtSeconde.setText("1/"+d);
             }
         });
-        
+
+        btnRacine.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                double d = Double.parseDouble(txtMain.getText().toString());
+                double res = Math.sqrt(d);
+                txtMain.setText(String.valueOf(res));
+                txtSeconde.setText("√ "+d);
+            }
+        });
+
+        btnPi.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                double res = Math.PI ;
+                txtMain.setText(String.valueOf(res));
+            }
+        });
+
         btnEgale.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
