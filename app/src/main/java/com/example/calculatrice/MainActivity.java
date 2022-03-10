@@ -134,13 +134,24 @@ public class MainActivity extends AppCompatActivity {
                 txtMain.setText(txtMain.getText() + ".");
             }
         });
+//        btnCos.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                txtMain.setText(txtMain.getText().toString() + "0");
+//                txtSeconde.setText(txtMain.getText());
+//                txtMain.setText("");
+//                op[0] = "c" ;
+//            }
+//        });
+
+        // il faut commencer par le nombre apres on click cos 
         btnCos.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                txtMain.setText(txtMain.getText().toString() + "0");
-                txtSeconde.setText(txtMain.getText());
-                txtMain.setText("");
-                op[0] = "c" ;
+                double d = Double.parseDouble(txtMain.getText().toString());
+                double res = Math.cos(d);
+                txtMain.setText(String.valueOf(res));
+                txtSeconde.setText("Cos "+d);
             }
         });
 
@@ -179,6 +190,15 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        btnCarre.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                double d = Double.parseDouble(txtMain.getText().toString());
+                double carree = d*d;
+                txtMain.setText(String.valueOf(carree));
+                txtSeconde.setText(d+"²");
+            }
+        });
 
         btnEgale.setOnClickListener(new View.OnClickListener() {
             @Override
