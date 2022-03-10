@@ -196,16 +196,15 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-//        btnFact.setOnClickListener(new View.OnClickListener() {
-////            @Override
-////            public void onClick(View v) {
-////                double d = Double.parseDouble(txtMain.getText().toString());
-////                double res = Math.fact(d);
-////                txtMain.setText(String.valueOf(res));
-////                txtSeconde.setText("Fact "+d);
-////            }
-////        });
-
+        btnFact.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                int d = Integer.parseInt(txtMain.getText().toString());
+                double res = fact(d);
+                txtMain.setText(String.valueOf(res));
+                txtSeconde.setText(d + " !");
+            }
+        });
 
         btnPlus.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -225,6 +224,16 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        btnTang.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                double d = Double.parseDouble(txtMain.getText().toString());
+                double res = Math.tan(Math.toRadians(d));
+                txtMain.setText(String.valueOf(res));
+                txtSeconde.setText("Tang "+d);
+            }
+        });
+
         btnDiv.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -233,6 +242,7 @@ public class MainActivity extends AppCompatActivity {
                 op[0] = "/";
             }
         });
+
         btnMulti.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -252,6 +262,13 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        btnDivPar1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+            }
+        });
+        
         btnEgale.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
