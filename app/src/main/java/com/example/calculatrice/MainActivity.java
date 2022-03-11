@@ -21,8 +21,10 @@ public class MainActivity extends AppCompatActivity {
         for(int i = 1 ; i <= a ; i++){
             fact = fact * i ;
         }
+
         return fact;
     }
+
 
     @SuppressLint("WrongConstant")
     @RequiresApi(api = Build.VERSION_CODES.O)
